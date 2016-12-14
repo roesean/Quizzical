@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/" class="navbar-brand">Admin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @*Hardcode this section to be your own custom nav bar using ui-sref*@
+                <li>
+                    <a ui-sref="userList" class="navbar-brand">User</a>
+                </li>
+                <li>
+                    <a ui-sref="quizList" class="navbar-brand">Quiz</a>
+                </li>
+                <li>
+                    <a ui-sref="questionList" class="navbar-brand">Question</a>
+                </li>
+                <li>
+                    <a ui-sref="answerList" class="navbar-brand">Answer</a>
+                </li>
+                <li>
+                    <a ui-sref="Default" class="navbar-brand">Take Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="divBelowNav container">
+    <h2>Question Details Test</h2>
+    <div class="form-horizontal">
+        <ul id="validationSummary"></ul>
+        <div class="form-group">
+            <label for="CorrectAnswer" class="control-label col-md-2">
+                CorrectAnswer
+            </label>
+            <div class="col-md-10">
+                {{data.CorrectAnswer}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Text" class="control-label col-md-2">
+                Text
+            </label>
+            <div class="col-md-10">
+                {{data.Text}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Quiz" class="control-label col-md-2">
+                Quiz
+            </label>
+            <div class="col-md-10">
+                <a ui-sref="quizDetails( {id: Quiz } )">
+                    {{data.Quiz_Name}}
+                </a>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Answers" class="control-label col-md-2">
+                Answers
+            </label>
+            <div class="col-md-10">
+                <a ui-sref="answerDetails( {id:  data.Id  } )">
+                    {{data.Answers_Count}}
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div>
+        <a ui-sref="questionList">Back to List</a>
+    </div>
+</div>

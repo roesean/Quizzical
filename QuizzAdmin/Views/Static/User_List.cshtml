@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/" class="navbar-brand">Admin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @*Hardcode this section to be your own custom nav bar using ui-sref*@
+                <li>
+                    <a ui-sref="userList" class="navbar-brand">User</a>
+                </li>
+                <li>
+                    <a ui-sref="quizList" class="navbar-brand">Quiz</a>
+                </li>
+                <li>
+                    <a ui-sref="questionList" class="navbar-brand">Question</a>
+                </li>
+                <li>
+                    <a ui-sref="answerList" class="navbar-brand">Answer</a>
+                </li>
+                <li>
+                    <a ui-sref="Default" class="navbar-brand">Take Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="divBelowNav container">
+    <h2>User</h2>
+    <p>
+        <a ui-sref="userCreate">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    UserName
+                </th>
+                <th>
+                    Password
+                </th>
+                <th>
+                    AvgScore
+                </th>
+                <th>
+                    TotalQuizzes
+                </th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in data">
+                <td>
+                    {{ item.UserName }}
+                </td>
+                <td>
+                    {{ item.Password }}
+                </td>
+                <td>
+                    {{ item.AvgScore }}
+                </td>
+                <td>
+                    {{ item.TotalQuizzes }}
+                </td>
+                
+                <td>
+                    <a ui-sref="userEdit( { id:item.Id } )">Edit</a> |
+                    <a ui-sref="userDetails( { id:item.Id } )">Details</a> |
+                    <a ui-sref="userDelete( { id:item.Id } )">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

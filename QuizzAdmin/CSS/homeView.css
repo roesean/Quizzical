@@ -1,0 +1,21 @@
+﻿.HV-BG {
+  height: 100vh;
+  background: linear-gradient( #0d0d0d, #1a1a1a );
+}
+
+.HV-Nav {
+  box-shadow: inset 0 1px 0 rgba(32,194,14, .8),0 1px 10px rgba(82, 242, 64, .9);
+}
+
+.whiteText {
+  color: #f2f2f2;
+}
+
+.errorDiv {
+  color: #f00;
+  font-size: 18px;
+}
+
+.selectQuizDiv {
+  margin-top: 25vh;
+}

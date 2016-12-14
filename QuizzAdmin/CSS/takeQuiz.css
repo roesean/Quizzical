@@ -1,0 +1,169 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ivoryPaperBG {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.07), 
+      rgba(0, 0, 0, 0.07)
+    ),
+    url('../Images/ivoryOffWhitePaper.jpg'),
+    no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
+/*
+NAVBAR
+*******************************************************************/
+
+.TQ-divBelowNav {
+    margin-top: 90px;
+    } /* to clear fixed-top navbar */
+
+.TQ-nav {
+  background: 
+    linear-gradient(
+      rgba(179, 255, 255, 0.3), 
+      rgba(128, 255, 255, 0.3)
+    );
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 4px 5px rgba(0,0,0,.075);
+}
+
+/*
+DISPLAYED QUIZ SECTION
+*******************************************************************/
+
+
+.pipe-char {
+  font-size: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.answerDivs {
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  /*border: 2px solid transparent;*/
+}
+
+.answerDivs:hover {
+  /*background-color: rgba(255, 224, 179, .5);*/
+  cursor: pointer;
+}
+
+
+.answerLetters {
+  border-radius: 50%;
+  padding: 6px 9px;
+  border: 1px solid black;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.answerLetterDivs {
+  margin-bottom: 5px;
+}
+
+.answerLetterHighlited {
+  background-color: rgba(128, 255, 255, 0.3);
+}
+
+.answerLetterSelected {
+  background-color: rgba(255, 255, 102, .6);
+}
+
+.answerTextPre {
+  margin-left: 5px;
+  display: inline;
+  background: none;
+  border: none;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: normal;
+  text-indent: 10em;
+  font-size: 17px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.btnDiv {
+  display: inline-block;
+  margin-right: 5%;
+}
+
+.proceedBtns {
+  width: 90px;
+}
+
+.font18px {
+  font-size: 18px;
+}
+
+.blockBtn {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.nextBtn:focus {
+  outline: 0;
+}
+
+.btnSpan {
+  display: inline-block;
+  margin-right: 5%;
+}
+
+.currentQuestionDiv {
+  margin-bottom: 20px;
+}
+
+.currentQuestionText {
+  font-size: 23px;
+  background: transparent;
+  white-space: pre-wrap;
+  word-break: normal;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+
+/*
+RESULTS MODAL
+*******************************************************************/
+
+.resultsLeftCol {
+  border-right: 1px lightgrey solid;
+}
+
+.resultsRightCol {
+  border-left: 1px lightgrey solid;
+}
+
+.faintBtmBorder {
+  border-bottom: 1px lightgrey solid;
+}

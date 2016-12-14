@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/" class="navbar-brand">Admin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @*Hardcode this section to be your own custom nav bar using ui-sref*@
+                <li>
+                    <a ui-sref="userList" class="navbar-brand">User</a>
+                </li>
+                <li>
+                    <a ui-sref="quizList" class="navbar-brand">Quiz</a>
+                </li>
+                <li>
+                    <a ui-sref="questionList" class="navbar-brand">Question</a>
+                </li>
+                <li>
+                    <a ui-sref="answerList" class="navbar-brand">Answer</a>
+                </li>
+                <li>
+                    <a ui-sref="Default" class="navbar-brand">Take Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="divBelowNav container">
+    <h2>QuizRun</h2>
+    <div class="form-horizontal">
+        <ul id="validationSummary"></ul>
+        Are you sure that you want to delete {{QuizRun}}?
+        <div class="form-group">
+            <label for="Score" class="control-label col-md-2">
+                Score
+            </label>
+            <div class="col-md-10">
+                {{data.Score}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="DateTaken" class="control-label col-md-2">
+                DateTaken
+            </label>
+            <div class="col-md-10">
+                {{data.DateTaken}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="User" class="control-label col-md-2">
+                User
+            </label>
+            <div class="col-md-10">
+                {{data.User_UserName}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Quiz" class="control-label col-md-2">
+                Quiz
+            </label>
+            <div class="col-md-10">
+                {{data.Quiz_Count}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" ng-click="save()" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a href="#/QuizRun">Back to List</a>
+    </div>
+</div>

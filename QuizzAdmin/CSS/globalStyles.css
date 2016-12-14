@@ -1,0 +1,53 @@
+﻿
+.divBelowNav {
+    padding-top: 80px;
+}
+
+.g-pre {
+  display: inline-block;
+  background: none;
+  border: none;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.g-noBGnoBorder {
+  background: none;
+  border: none;
+}
+
+.g-textWhite {
+  color: #f2f2f2;
+}
+
+.g-alignLeft {
+  text-align: left;
+}
+
+.g-bold {
+  font-weight: bold;
+}
+
+.g-font28px {
+  font-size: 28px !important;
+}
+
+.g-font20px {
+  font-size: 20px;
+}
+
+.g-marBot0 {
+  margin-bottom: 0;
+}
+
+.g-padBot0 {
+  padding-bottom: 0;
+}
+
+.g-preFontFam {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace !important;
+}
+
+.g-marTop10 {
+  margin-top: 10px;
+}

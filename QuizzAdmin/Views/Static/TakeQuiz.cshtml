@@ -1,0 +1,117 @@
+﻿@{
+  Layout = null;
+}
+
+
+<!-- quizResultsModal -->
+<div class="modal fade bd-example-modal-lg" id="quizResultsModal" tabindex="-1" role="dialog" aria-labelledby="quizResultsModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ui-sref="HomeView"><span aria-hidden="true">&times;</span></button>
+        <h3 class="text-center modal-title" id="addNewCohortTitle">Your Results</h3>
+        <h3 class="text-center">{{scorePercent}}%</h3>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-sm-6 resultsLeftCol">
+              <h4 class="text-center greyBtmBorder">
+                {{correctlyAnsweredQuestions.length}} Correct
+              </h4>
+              <div ng-repeat="question in correctlyAnsweredQuestions"
+                   class="faintBtmBorder">
+                <h5>Q: {{question.Text}}</h5>
+                <h5>A: {{question.CorrectAnswer}}</h5>
+              </div>
+            </div>
+
+            <div class="col-sm-6 resultsRightCol">
+              <h4 class="text-center greyBtmBorder">
+                {{incorrectlyAnsweredQuestions.length}} Incorrect
+              </h4>
+              <div ng-repeat="question in incorrectlyAnsweredQuestions"
+                   class="faintBtmBorder">
+                <h5>Q: {{question.Text}}</h5>
+                <h5>You Answered: {{question.chosenAnswer.Text}}</h5>
+              </div>
+            </div>
+          </div><!-- row 1 -->
+
+          <div class="row">
+          </div><!-- row 2 -->
+
+        </div><!-- col container -->
+      </div><!-- Modal Body -->
+      <div class="modal-footer">
+        <button class="btn"
+                data-dismiss="modal"
+                ui-sref="HomeView">
+          Close
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div><!-- End #quizResultsModal -->
+<div class="ivoryPaperBG">
+  <div class="animated fadeIn">
+    <nav class="navbar-fixed-top TQ-nav">
+      <div class="container">
+        <h2 class="text-center g-preFontFam g-marTop10">
+          {{ selectedQuiz.Name }} Quiz
+        </h2>
+        <h5 class="text-center g-preFontFam">
+          Question {{ currentQuestionIndex + 1 }} of {{ selectedQuiz.Questions.length }} <span class="pipe-char">|</span> Correct Tally: {{ correctAnswerCounter }}
+        </h5>
+      </div>
+    </nav>
+    <div class="TQ-divBelowNav"></div>
+    <div class="row">
+      <div class="text-center currentQuestionDiv">
+        <h3>
+          <pre class="currentQuestionText animated fadeInRight">{{ currentQuestion.Text }}</pre>
+        </h3>
+      </div>
+      <div ng-repeat="answer in currentQuestion.Answers"
+           ng-click="selectedAnswerClick(answer, $index)"
+           ng-mouseover="mouseOverAnswerDiv($index)"
+           ng-mouseleave="mouseLeaveAnswerDiv($index)"
+           class="answerDivs animated fadeInRight"
+           id="answerDiv{{ $index }}">
+        <div id="answerLetterDiv{{ $index }}" class="answerLetterDivs inline-block animated">
+          <span class="answerLetters"
+                id="answerLetter{{ $index }}">
+            {{ alphabet[$index] }}
+          </span>
+        </div>
+        <pre class="answerTextPre">{{ answer.Text }}</pre>
+      </div><!-- ng-repeat answers -->
+    </div><!-- row 1 -->
+
+    <div class="row">
+      <div class="btnDiv pull-right animated fadeInRight">
+        <button ng-click="nextQuestionClick()"
+                ng-mouseover="mouseOverOrFocusProceedBtns()"
+                ng-mouseleave="mouseLeaveOrBlurProceedBtns()"
+                ng-focus="mouseOverOrFocusProceedBtns()"
+                ng-blur="mouseLeaveOrBlurProceedBtns()"
+                ng-if="!isLastQuestion"
+                class="btn btn-default nextBtn proceedBtns animated">
+          <span class="g-font20px">&rArr;</span>
+        </button>
+        <button ng-click="finishBtnClick()"
+                ng-mouseover="mouseOverOrFocusProceedBtns()"
+                ng-mouseleave="mouseLeaveOrBlurProceedBtns()"
+                ng-focus="mouseOverOrFocusProceedBtns()"
+                ng-blur="mouseLeaveOrBlurProceedBtns()"
+                ng-if="isLastQuestion"
+                class="btn btn-default proceedBtns animated">
+          Finish
+        </button>
+      </div>
+    </div><!-- row 2 -->
+
+  </div><!-- BG Image -->
+</div>

@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/" class="navbar-brand">Admin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @*Hardcode this section to be your own custom nav bar using ui-sref*@
+                <li>
+                    <a ui-sref="userList" class="navbar-brand">User</a>
+                </li>
+                <li>
+                    <a ui-sref="quizList" class="navbar-brand">Quiz</a>
+                </li>
+                <li>
+                    <a ui-sref="questionList" class="navbar-brand">Question</a>
+                </li>
+                <li>
+                    <a ui-sref="answerList" class="navbar-brand">Answer</a>
+                </li>
+                <li>
+                    <a ui-sref="Default" class="navbar-brand">Take Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="divBelowNav container">
+    <h2>User Details Test</h2>
+    <div class="form-horizontal">
+        <ul id="validationSummary"></ul>
+        <div class="form-group">
+            <label for="UserName" class="control-label col-md-2">
+                UserName
+            </label>
+            <div class="col-md-10">
+                {{data.UserName}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Password" class="control-label col-md-2">
+                Password
+            </label>
+            <div class="col-md-10">
+                {{data.Password}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="AvgScore" class="control-label col-md-2">
+                AvgScore
+            </label>
+            <div class="col-md-10">
+                {{data.AvgScore}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="TotalQuizzes" class="control-label col-md-2">
+                TotalQuizzes
+            </label>
+            <div class="col-md-10">
+                {{data.TotalQuizzes}}
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            <label for="QuizRuns" class="control-label col-md-2">
+                QuizRuns
+            </label>
+            <div class="col-md-10">
+                <a ng-href="#QuizRun?User={{data.Id }}">
+                    {{data.QuizRuns_Count}}
+                </a>
+            </div>
+        </div>*@
+
+
+    </div>
+
+    <div>
+        <a ui-sref="userList">Back to List</a>
+    </div>
+</div>

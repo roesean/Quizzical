@@ -1,0 +1,58 @@
+﻿@{
+  Layout = null;
+}
+<div class="SU-BG">
+  <div class="animated fadeIn">
+    <nav class="navbar navbar-inverse navbar-fixed-top SU-Nav">
+      <div class="container">
+        <h2 class="text-center g-preFontFam g-textWhite g-marTop10">Quizzical Sign Up</h2>
+      </div>
+    </nav>
+
+    <div class="divBelowNav container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="well darkWell animated fadeInLeft">
+            <form>
+              <div class="errorDiv" ng-if="error != null">{{error}}</div>
+              <div class="form-group">
+                <h3 class="text-center g-preFontFam g-textWhite">Login</h3>
+                <label for="username" class="g-textWhite">Username: </label>
+                <input class="form-control" type="text" id="username" ng-model="username" />
+              </div>
+              <div class="form-group">
+                <label class="pull-left g-textWhite" for="password">Password: </label>
+                <input class="form-control" type="password" id="password" ng-model="password" />
+              </div>
+
+              <button class="btn btn-success" ng-click="signIn()">
+                Sign In
+              </button>
+              <button class="btn btn-warning" ng-click="continueAsGuest()">
+                Continue as Guest
+              </button>
+
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well darkWell animated fadeInRight">
+            <form>
+              <div class="errorDiv" ng-if="badUser != null">{{badUser}}</div>
+              <div class="form-group">
+                <h3 class="text-center g-preFontFam g-textWhite">Register</h3>
+                <label for="username" class="g-textWhite">Username: </label>
+                <input class="form-control" type="text" id="username" ng-model="newUser.UserName" />
+              </div>
+              <div class="form-group">
+                <label class="pull-left g-textWhite" for="password">Password: </label>
+                <input class="form-control" type="password" id="password" ng-model="newUser.Password" />
+              </div>
+              <button class="btn btn-success" ng-click="signUp()">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><!-- Div Below Nav -->
+  </div>
+</div><!--Background Div-->

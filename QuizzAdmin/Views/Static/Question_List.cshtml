@@ -1,0 +1,90 @@
+﻿@{
+    Layout = null;
+}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/" class="navbar-brand">Admin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @*Hardcode this section to be your own custom nav bar using ui-sref*@
+                <li>
+                    <a ui-sref="userList" class="navbar-brand">User</a>
+                </li>
+                <li>
+                    <a ui-sref="quizList" class="navbar-brand">Quiz</a>
+                </li>
+                <li>
+                    <a ui-sref="questionList" class="navbar-brand">Question</a>
+                </li>
+                <li>
+                    <a ui-sref="answerList" class="navbar-brand">Answer</a>
+                </li>
+                <li>
+                    <a ui-sref="Default" class="navbar-brand">Take Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="divBelowNav container">
+    <h2>Question</h2>
+    <p>
+        <a ui-sref="questionCreate">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    CorrectAnswer
+                </th>
+                <th>
+                    Text
+                </th>
+                <th>
+                    Quiz
+                </th>
+                <th>
+                    Answers
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in data">
+                <td>
+                    {{ item.CorrectAnswer }}
+                </td>
+                <td>
+                    {{ item.Text }}
+                </td>
+                <td>
+                    <a ui-sref="quizDetails( {id: item.QuizId } )">
+                        {{item.Quiz_Name}}
+                    </a>
+                </td>
+
+                <td>
+                    @* To Be added: Filter by question name in answers *@
+                    <a ui-sref="answerList">
+                        {{item.Answers_Count}}
+                    </a>
+                </td>
+                <td>
+                    <a ui-sref="questionEdit( {id: item.Id } )">Edit</a> |
+                    <a ui-sref="questionDetails( {id: item.Id } )">Details</a> |
+                    <a ui-sref="questionDelete( {id:item.Id } )">Delete</a>
+                </td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

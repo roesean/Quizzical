@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+<div class="HV-BG">
+  <div class="animated fadeIn">
+    <nav class="navbar navbar-inverse navbar-fixed-top HV-Nav">
+      <div class="container">
+        <h2 class="text-center g-textWhite g-preFontFam g-marTop10">Select A Quiz</h2>
+      </div>
+    </nav>
+
+    <div class="divBelowNav container">
+      <div class="row">
+
+        <div class="col-md-8 col-md-offset-2 text-center selectQuizDiv animated fadeInLeft">
+          <div>
+            <button class="btn-success btn allButtons"
+                    ui-sref="TakeQuiz( { id:selectedQuiz.Id } )"
+                    ng-repeat="quiz in quizzes | orderBy: 'Name'"
+                    ng-click="setSelectedQuizClick(quiz)">
+              {{quiz.Name}}
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- Background Container-->
+
+

@@ -1,0 +1,22 @@
+﻿.SU-BG {
+  height: 100vh;
+    background: 
+    linear-gradient(
+      #0d0d0d, 
+      #1a1a1a
+    );
+}
+
+.SU-Nav {
+  box-shadow: inset 0 1px 0 rgba(32,194,14, .8),0 1px 10px rgba(82, 242, 64, .9);
+}
+
+.darkWell {
+  background: 
+    linear-gradient(
+      #262626, 
+      #333333
+    );
+  border: 2px outset #404040;
+}
+
